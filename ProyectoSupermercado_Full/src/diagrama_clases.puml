@@ -1,0 +1,75 @@
+@startuml
+title Diagrama de clases - Sistema Supermercado
+class Producto {
+  - String codigo
+  - String nombre
+  - String categoria
+  - double precio
+  - int cantidad
+  + getCodigo()
+  + getNombre()
+  + getCategoria()
+  + getPrecio()
+  + getCantidad()
+  + setNombre()
+  + setCategoria()
+  + setPrecio()
+  + setCantidad()
+}
+class NodoAVL {
+  - Producto producto
+  - NodoAVL izquierda
+  - NodoAVL derecha
+  - int altura
+}
+class ArbolAVL {
+  - NodoAVL raiz
+  + insertar(Producto)
+  + buscar(String)
+  + eliminar(String)
+  + mostrarInOrden()
+}
+class Cliente {
+  - String nombre
+  - TipoCliente tipo
+  - int productos
+  - long llegada
+  + getNombre()
+  + getTipo()
+  + getCantidadProductos()
+  + getHoraLlegada()
+  + getPrioridad()
+}
+class ColaPrioridad {
+  - ArrayList<Cliente> heap
+  + agregar(Cliente)
+  + extraer()
+  + mostrarCola()
+}
+class Supermercado {
+  - ArbolAVL inventario
+  - ColaPrioridad cola
+  + insertarProducto(Producto)
+  + buscarProducto(String)
+  + actualizarProducto(...)
+  + eliminarProducto(String)
+  + mostrarInventario()
+  + agregarCliente(Cliente)
+  + atenderCliente()
+  + simularAtencion(Scanner)
+}
+class Menu {
+  - Supermercado sm
+  - Scanner sc
+  + iniciar()
+  + insertarProducto()
+  + agregarCliente()
+  + simularAtencion()
+}
+Producto -- NodoAVL
+NodoAVL -- ArbolAVL
+Cliente -- ColaPrioridad
+ArbolAVL -- Supermercado
+ColaPrioridad -- Supermercado
+Supermercado -- Menu
+@enduml

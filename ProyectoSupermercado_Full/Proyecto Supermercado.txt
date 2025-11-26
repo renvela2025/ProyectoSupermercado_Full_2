@@ -1,0 +1,42 @@
+Proyecto: Sistema de Supermercado (Árbol AVL y Cola de Prioridad)
+
+FECHA DE ENTREGA: [Insertar Fecha Aquí]
+
+==================================================
+1. ESTRUCTURA DEL PROYECTO
+==================================================
+El código se encuentra organizado por paquetes dentro del directorio 'src':
+  - sistema/      (Menu.java, Supermercado.java)
+  - clientes/     (Cliente.java, ColaPrioridad.java)
+  - inventario/   (Producto.java, NodoAVL.java, ArbolAVL.java)
+
+==================================================
+2. INSTRUCCIONES DE COMPILACIÓN Y EJECUCIÓN
+==================================================
+
+Requisito: Java 8 o superior.
+
+Paso 1: Navegar al directorio fuente
+Abra una terminal o línea de comandos y navegue a la carpeta 'src' del proyecto:
+cd ProyectoSupermercado_Full/src/
+
+Paso 2: Compilar todos los archivos Java
+Utilice el siguiente comando para compilar los archivos de todos los paquetes:
+javac sistema/*.java clientes/*.java inventario/*.java
+
+Paso 3: Ejecutar el programa
+El punto de entrada es la clase 'Menu' dentro del paquete 'sistema':
+java sistema.Menu
+
+==================================================
+3. FUNCIONALIDADES CLAVE
+==================================================
+- Gestión de Inventario: Utiliza un Árbol AVL. Soporta Inserción, Búsqueda, Eliminación y Actualización de productos por código.
+- Gestión de Clientes: Utiliza una Cola de Prioridad (Min-Heap). La prioridad se define por (1) Tipo de Cliente (VIP < ADULTO_MAYOR < REGULAR) y (2) Hora de Llegada (FIFO para empates).
+- Simulación: Permite atender clientes secuencialmente e integrar la opción de agregar nuevos clientes durante el proceso de simulación.
+
+==================================================
+4. INFORMACIÓN ADICIONAL
+==================================================
+- La documentación Javadoc se encuentra integrada en el código fuente.
+- El Diagrama UML de Clases se proporciona en un archivo separado ('diagrama_clases.png' o 'diagrama_clases.puml').
